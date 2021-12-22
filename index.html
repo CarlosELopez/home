@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        html {
+            background-color: white;
+        }
+        body {
+            font-family: 'Space Mono', monospace;
+            --element-radius: 10px;
+            --bold-padding: 3px;
+            --highlight-color: black;
+            --max-width-val: 96vw;
+            font-size: 15px;
+            overflow: scroll;
+        }
+        #body-content {
+            min-width: var(--max-width-val);
+            max-width: var(--max-width-val);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #center-column {
+            min-width: 450px;
+            max-width: 500px;
+        }
+        #element-container {
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            --padding-size: 5vh;
+            background-color: #fff;
+            border-radius: var(--element-radius);
+            padding: 20px;
+            padding-left: var(--padding-size);
+            padding-right: var(--padding-size);
+            padding-top: var(--padding-size);
+            padding-bottom: var(--padding-size);
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            0%   {margin-top: 80vh;}
+            100% {margin-top: 5vh; }
+        }
+
+        a,
+        a:visited {
+            background-color: var(--highlight-color);
+            color: white;
+            padding-left: var(--bold-padding);
+            padding-right: var(--bold-padding);
+            font-weight: bold;
+        }
+        b:hover,
+        a:hover, #noteworthy a:hover {
+            background-color: yellow;
+            color: black;
+            font-style: italic;
+        }
+
+        #noteworthy  a {
+            background-color: white;
+            color: black;
+            font-weight: 400;
+        }
+
+        #profile-pic {
+            --profile-pic-radius : 50%;
+            width: 80px;
+            height: 80px;
+            border-radius: var(--profile-pic-radius);
+            filter: contrast(120%);
+            border-bottom: 1px solid rgb(145, 145, 145);
+        }
+        #profile-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 3vh;
+        }
+
+        #first-p::first-letter {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            float: left;
+            font-size: 3.5em;
+            margin-right: 5px;
+            line-height: 85%;
+            width: .7em;
+        }
+
+        @media screen and (min-width: 100px) and (max-width:499px) {
+            body {
+                background-color: white;
+                font-size: 15px;
+                background-attachment: 'fixed';
+                background-repeat: no-repeat;
+            }
+            #body-content {
+                min-width: 300px;
+                max-width: var(--max-width-val);
+                width: var(--max-width-val);
+                height: 90vh;
+                justify-content: normal;
+            }
+            #center-column {
+                width: 100%;
+                min-width: 298px;
+                max-width: var(--max-width-val);
+            }
+            #element-container {
+                margin-top: 3vh;
+                padding: 6vw;
+                padding-top: 5vh;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-content">
+        <div id="center-column">
+            <div id="element-container">
+                <div id="profile-container">
+                    <img id="profile-pic" src="./photo.png" />
+                </div>
+                <div id="text-container">
+                    <p id="first-p">Hello. My name is <a href="https://www.linkedin.com/in/carlos-lopez-nyc/">Carlos Lopez</a>. I am
+                        a software engineer based in New York City. I've worked on front-end, back-end, distributed systems, and computer graphics. I enjoy working on mission critical systems, leading teams of people that want to deliver
+                        great products.</p>
+                    
+                    <p>I spent a good deal of time working on real-time <a href="https://www.bloomberg.com/professional/product/execution-management-system/">trading platforms</a>. Most recently, I have had the luck of <a href="https://www.bloomberg.com/live">overseeing video streams</a> and a <a href="https://apps.apple.com/us/app/bloomberg-business-news/id281941097">mobile app</a>. I enjoy working the most on JavaScript, Python, C++, zsh, as well as web technologies.</p>
+
+                    <p>On the side, I enjoy cycling, bouldering, and reading good book.</p>
+
+                    <p>If you want to get in touch with me, you can do so <a href="https://www.linkedin.com/in/carlos-lopez-nyc/">here</a>.</p>
+                    
+                    <p>
+                        Here are some things that I found noteworthy.
+                    </p>
+                    <ul id="noteworthy">
+                        <li><a href="https://builtin.com/software-engineering-perspectives/when-mvps-hurt">When MVPs Hurt (Marianne Bellotti)</a></li>
+                        <li><a href="https://www.theatlantic.com/family/archive/2021/02/hiking-ideal-structure-friendship/618066/">Hiking is an ideal structure for friendship.(Julie Beck)</a></li>
+                        <li><a href="https://madned.substack.com/p/a-teenagers-guide-to-avoiding-actual">A Teenager's Guide to Avoiding Actual Work. (#MadNed)</a></li>
+                        <li><a href="https://ava.substack.com/p/how-to-avoid-half-heartedness">How to Avoid Half-Heartedness (Ava)</a></li>
+                        <li><a href="https://earthly.dev/blog/thought-leaders/">Don't Feed the Thought Leaders (Adam Gordon Bell)</a></li>
+                        <li><a href="https://developer.okta.com/blog/2018/06/20/what-happens-if-your-jwt-is-stolen">What Happens If Your JWT Is Stolen? (Randall Degges)</a></li>
+                        <li><a href="https://www.fathommag.com/stories/i-draw-a-lily-on-my-thumb">I draw a Lily on my thumb. (Audrey Elledge)</a></li>
+                        <li><a href="https://www.newyorker.com/magazine/2002/02/11/the-real-heroes-are-dead">The Real Heroes Are Dead (James B. Stewart)</a></li>
+                        <li><a href="https://blog.vnaik.com/posts/web-attacks.html">CSRF, CORS, and HTTP Security headers Demystified (Varun Naik)</a></li>
+                        <li><a href="https://americanaffairsjournal.org/2021/11/crises-of-elite-competition-in-the-east-and-west/">Crises of Elite Competition in the East and West (Malcom Kyeyune and Marty MacMarty)</a></li>
+                        <li><a href="https://www.nytimes.com/2021/03/05/opinion/influencers-glennon-doyle-instagram.html">The Empty Religions of Instagram (Leigh Stein)</a></li>
+                        <li><a href="https://frenchpress.thedispatch.com/p/the-case-for-religious-liberty-is">The Case for Religious Liberty Is More Compelling than the Case for Christian Power (French Dispatch)</a></li>
+                        <li><a href="https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368">Mistakes, we’ve drawn a few (Sarah Leo)</a></li>
+                        <li><a href="https://journal.praxislabs.org/love-in-the-time-of-coronavirus-26aaeb0396e3">Love in the Time of Coronavirus (Andy Crouch)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let mouseOverContainer = document.getElementById("body-content");
+        let ex1Layer = document.getElementById("center-column");
+        let gradients = [
+            "rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%",
+            "#ee7752, #e73c7e, #23a6d5, #23d5ab",
+            "#f7971e, #ffd200",
+            "#34e89e, #0f3443",
+            "#6190e8, #a7bfe8",
+            "#c6ffdd, #fbd786, #f7797d",
+            "#2980b9, #6dd5fa, #ffffff",
+            "#8360c3, #2ebf91",
+            "#ff9966, #ff5e62",
+            "#c33764, #1d2671"
+        ];
+        let selectedGradient = gradients[Math.floor(Math.random() * gradients.length)];
+        function transforms(x, y, el) {
+            let constrain =  4000;
+            let box = el.getBoundingClientRect();
+            let calcX = -(y - box.y - (box.height / 2)) / constrain;
+            let calcY = (x - box.x - (box.width / 2)) / constrain;
+            return { calcX, calcY, x, y };
+        };
+        function updateBackground(angle = Math.floor(Math.random()*180)-360) {
+            let bodyStyle = document.body.style;
+            bodyStyle.background = `linear-gradient(${(angle / 20 % 720)-360}deg, ${selectedGradient})`;
+        }
+        function transformElement(el, xyEl) {
+            let transformValues = transforms.apply(null, xyEl);
+            el.style.transform = "perspective(500px) "
+                + "   rotateX(" + transformValues.calcX + "deg) "
+                + "   rotateY(" + transformValues.calcY + "deg) ";
+            updateBackground(transformValues.x);
+        }
+        function animateBackground(e) {
+            let xy = [e.clientX, e.clientY];
+            let position = xy.concat([ex1Layer]);
+            window.requestAnimationFrame(function () {
+                transformElement(ex1Layer, position);
+            });
+        };
+        function attachAnimatedBackground() {
+            window.onmousemove = animateBackground;
+            updateBackground();
+        }
+        let responsiveWidth = 499;
+        let windowWatcher = window.matchMedia(`(min-width: 100px) and (max-width:${responsiveWidth}px)`);
+        windowWatcher.addEventListener('change', event => {
+            if (event.matches) {
+                window.onmousemove = null;
+                document.body.style.background = '';
+                document.body.backgroundColor = 'white';
+            }
+            else {
+                attachAnimatedBackground();
+            }
+        });
+        document.onreadystatechange = event => {
+            if(window.screen.width > responsiveWidth) {
+                attachAnimatedBackground();
+            }
+        }
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 500);
+    </script>
+</body>
+    <!-- feel free to steal the code. Credit to Stack Overflow, some online tools, etc. I'll break up the next version into multiple files.-->
+</html>
