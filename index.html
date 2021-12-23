@@ -14,13 +14,13 @@
             --element-radius: 10px;
             --bold-padding: 3px;
             --highlight-color: black;
-            --max-width-val: 96vw;
+            --max-width-val: 100%;
             font-size: 15px;
             overflow: scroll;
+            margin: 0px;
         }
         #body-content {
-            min-width: var(--max-width-val);
-            max-width: var(--max-width-val);
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -58,7 +58,7 @@
         }
         b:hover,
         a:hover, #noteworthy a:hover {
-            background-color: yellow;
+            background-color: #ffd413;
             color: black;
             font-style: italic;
         }
@@ -139,9 +139,9 @@
                     <p>On the side, I enjoy cycling, bouldering, and reading a good book.</p>
 
                     <p>If you want to get in touch with me, you can do so <a href="https://www.linkedin.com/in/carlos-lopez-nyc/">here</a>.</p>
-                    
+                    <br />
                     <p>
-                        Here are some things that I found noteworthy.
+                        Here are some things that I found thought-provoking.
                     </p>
                     <ul id="noteworthy">
                         <li><a href="https://builtin.com/software-engineering-perspectives/when-mvps-hurt">When MVPs Hurt (Marianne Bellotti)</a></li>
@@ -155,9 +155,7 @@
                         <li><a href="https://blog.vnaik.com/posts/web-attacks.html">CSRF, CORS, and HTTP Security headers Demystified (Varun Naik)</a></li>
                         <li><a href="https://americanaffairsjournal.org/2021/11/crises-of-elite-competition-in-the-east-and-west/">Crises of Elite Competition in the East and West (Malcom Kyeyune and Marty MacMarty)</a></li>
                         <li><a href="https://www.nytimes.com/2021/03/05/opinion/influencers-glennon-doyle-instagram.html">The Empty Religions of Instagram (Leigh Stein)</a></li>
-                        <li><a href="https://frenchpress.thedispatch.com/p/the-case-for-religious-liberty-is">The Case for Religious Liberty Is More Compelling than the Case for Christian Power (French Dispatch)</a></li>
                         <li><a href="https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368">Mistakes, we’ve drawn a few (Sarah Leo)</a></li>
-                        <li><a href="https://journal.praxislabs.org/love-in-the-time-of-coronavirus-26aaeb0396e3">Love in the Time of Coronavirus (Andy Crouch)</a></li>
                     </ul>
                 </div>
             </div>
@@ -169,16 +167,19 @@
         let gradients = [
             "rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%",
             "#ee7752, #e73c7e, #23a6d5, #23d5ab",
-            "#f7971e, #ffd200",
-            "#34e89e, #0f3443",
-            "#c6ffdd, #fbd786, #f7797d",
-            "#2980b9, #6dd5fa, #ffffff",
-            "#8360c3, #2ebf91",
-            "#c33764, #1d2671"
+            "#f7971e, #ffd200", //learning and leading
+            "#34e89e, #0f3443", //pacific dream
+            "#c6ffdd, #fbd786, #f7797d", //megatron
+            "#2980b9, #6dd5fa, #ffffff", //cool sky
+            "#8360c3, #2ebf91", //kye meh
+            "#a8ff78, #78ffd6", //summer dog
+            "#ffefba, #ffffff", //margo,
+            "#000046, #1CB5E0", //visions of grandeur,
+            "#30E8BF, #FF8235", //mini
         ];
         let selectedGradient = gradients[Math.floor(Math.random() * gradients.length)];
         function transforms(x, y, el) {
-            let constrain =  4000;
+            let constrain =  3500;
             let box = el.getBoundingClientRect();
             let calcX = -(y - box.y - (box.height / 2)) / constrain;
             let calcY = (x - box.x - (box.width / 2)) / constrain;
